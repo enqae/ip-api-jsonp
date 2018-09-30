@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <script type="application/javascript" src="./ConnectionEnvironment.js"></script>
+
+        <script type="application/javascript">
+        
+            function envNoP(){
+                CE.get(function(data){
+                    alert(JSON.stringify(data));
+                });
+            };
+
+            function envP(){
+                CE.getP(function(data){
+                    alert(JSON.stringify(data));
+                });
+            };
+
+            function envP2(){
+                CE.getP2()
+                    .then(function(response){
+                        alert(JSON.stringify(response));
+                    });
+            };
+
+            function envSample(){
+                alert(JSON.stringify(CE.getSample()));
+            };
+
+        </script>
+    </head>
+    <body>
+            <input type="button" value="Load NO P" onclick="envNoP();" />
+            <hr>
+            <input type="button" value="Load P" onclick="envP();" />
+            <hr>
+            <input type="button" value="Load P-2" onclick="envP2();" />
+            <hr>
+            <input type="button" value="Load Sample" onclick="envSample();" />
+
+    </body>
+</html>
